@@ -1,0 +1,16 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/outreachdb
+  cloud:
+    config:
+      uri: http://localhost://8002/
+logging:
+  level:
+    com.eventmgmt.eventgateway: DEBUG
+  pattern:
+    console: %d{yyyy-MM-dd HH:mm:ss} - %msg%n
+zuul:
+  routes:
+      event-service:
+        url:   http://localhost:8003/
